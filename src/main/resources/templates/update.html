@@ -3,17 +3,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Update user</title>
+    <title>Title</title>
     <style>
         table {
-            font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+            font-family: "Lucida Sans Unicode", Lucida Grande, "Sans-Serif";
             text-align: left;
             border-collapse: separate;
             border-spacing: 5px;
-            background: #ECE9E0;
-            color: #656665;
-            border: 16px solid #ECE9E0;
-            border-radius: 20px;
+            background: #f5e6ac;
+            color: #24212a;
+            border: 16px solid #f8d579;
+            border-radius: 18px;
         }
 
         th {
@@ -22,13 +22,12 @@
         }
 
         td {
-            background: #F5D7BF;
+            background: #e4ffe2;
             padding: 10px;
         }
     </style>
 </head>
 <body>
-
 <form th:method="PATCH" th:action="@{/update/{id}(id=${user.getId()})}" th:object="${user}">
     <label for="id">ID</label>
     <input readonly type="number" th:field="*{id}" id="id" placeholder="ID">
