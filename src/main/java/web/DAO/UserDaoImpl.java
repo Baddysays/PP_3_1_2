@@ -3,13 +3,11 @@ package web.DAO;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
 import web.model.User;
 
 
 import java.util.List;
 @Component
-@Repository
 public class UserDaoImpl implements UserDao {
 
 @PersistenceContext
@@ -18,14 +16,11 @@ public class UserDaoImpl implements UserDao {
     @Override
     public void addUser(User user) {
         entityManager.persist(user);
-
-
     }
 
     @Override
     public List<User> listUsers() {
-        List <User> userList = entityManager.createQuery("FROM User", User.class).getResultList();
-        return userList;
+        return entityManager.createQuery("FROM User", User.class).getResultList();
     }
 
     @Override
