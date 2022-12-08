@@ -2,21 +2,19 @@ package web.DAO;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import web.model.User;
 
 
 import java.util.List;
-@Component
+@Repository
 public class UserDaoImpl implements UserDao {
 
 @PersistenceContext
     private EntityManager entityManager;
 
     @Override
-    public void addUser(User user) {
-        entityManager.persist(user);
-    }
+    public void addUser(User user) { entityManager.persist(user); }
 
     @Override
     public List<User> listUsers() {
